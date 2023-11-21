@@ -1,0 +1,40 @@
+.ui.form {
+	label {
+		position: relative;
+		bottom: 8px;
+	}
+
+	.field {
+		.ui.input {
+			input {
+				border: 2px solid $borde-primario;
+				background-color: $fondo-secundario;
+				color: $texto-primario;
+				padding: 14px;
+				border-radius: 6px;
+
+				&:hover,
+				&:active,
+				&:focus {
+					border-color: $primario;
+				}
+			}
+		}
+	}
+
+	.field.error {
+		.ui.input {
+			input {
+				border-color: $peligro;
+			}
+		}
+	}
+
+	.ui.button[type='submit'] {
+		background-color: $primario;
+		color: $texto-primario;
+		margin: 0;
+		padding: 15.5px 30px;
+		border-radius: 6px;
+	}
+}

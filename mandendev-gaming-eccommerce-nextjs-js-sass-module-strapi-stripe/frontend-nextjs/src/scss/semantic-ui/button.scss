@@ -1,0 +1,13 @@
+.ui.primary.button {
+	background-color: $primario;
+	color: $texto-primario;
+	margin: 0;
+	padding: 15.5px 30px;
+	border-radius: 6px;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: $primario-hover;
+	}
+}

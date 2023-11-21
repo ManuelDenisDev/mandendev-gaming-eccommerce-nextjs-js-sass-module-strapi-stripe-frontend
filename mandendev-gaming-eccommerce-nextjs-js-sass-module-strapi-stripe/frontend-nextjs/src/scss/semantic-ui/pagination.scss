@@ -1,0 +1,18 @@
+.ui.pagination {
+    border-color: $borde-primario;
+    background-color: $fondo-cuaternario;
+  
+    > .item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: $texto-primario;
+  
+      &.active,
+      &:focus,
+      &:hover {
+        background-color: $fondo-terciario !important;
+        color: $texto-primario !important;
+      }
+    }
+  }
