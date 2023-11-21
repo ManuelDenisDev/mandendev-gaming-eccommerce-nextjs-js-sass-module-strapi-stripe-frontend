@@ -7,3 +7,38 @@
 	flex-direction: row;
 	justify-content: space-between;
 }
+
+.superiorBarra {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	padding: 15px;
+	> a {
+		> img {
+			height: 30px;
+		}
+		> i {
+			font-size: 26px;
+			color: $peligro;
+			margin: 0;
+		}
+	}
+}
+
+.bloqueIzquierda {
+	width: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.bloqueDerecha {
+	background-image: url('/images/iniciar-sesion-wallpaper.jpg');
+	background-position: center;
+	background-size: cover;
+	height: 100%;
+	width: 50%;
+}
