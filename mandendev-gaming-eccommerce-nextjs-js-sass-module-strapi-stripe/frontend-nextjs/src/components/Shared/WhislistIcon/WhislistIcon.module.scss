@@ -1,0 +1,10 @@
+@import '~/src/scss/index.scss';
+
+.whislistIcon {
+	color: $primario;
+
+	&:hover {
+		opacity: 0.6;
+		cursor: pointer;
+	}
+}

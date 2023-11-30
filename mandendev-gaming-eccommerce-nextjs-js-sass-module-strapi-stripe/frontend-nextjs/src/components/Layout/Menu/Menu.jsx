@@ -1,6 +1,7 @@
 import { Image, Icon, Input } from 'semantic-ui-react';
 import { map } from 'lodash';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import styles from './Menu.module.scss';
 import { Platform } from '../../../api';
@@ -11,9 +12,11 @@ const platformCtrl = new Platform();
 export function Menu(props) {
 	const { isOpenSearch } = props;
 	const [platforms, setPlatforms] = useState(null);
-	const [showSearch, setshowSearch] = useState(false);
+	const [showSearch, setShowSearch] = useState(isOpenSearch);
+	const [searchText, setSearchText] = useState('');
+	const router = useRouter();
 
-	const openCloseSearch = () => setshowSearch(prevState => !prevState);
+	const openCloseSearch = () => setShowSearch(prevState => !prevState);
 
 	useEffect(() => {
 		(async () => {
@@ -25,6 +28,15 @@ export function Menu(props) {
 			}
 		})();
 	}, []);
+
+	useEffect(() => {
+		setSearchText(router.query.s || '');
+	}, []);
+
+	const onSearch = text => {
+		setSearchText(text);
+		router.replace(`/search?s=${text}`);
+	};
 
 	return (
 		<div className={styles.platforms}>
@@ -51,6 +63,8 @@ export function Menu(props) {
 					placeholder="Buscador"
 					className={styles.input}
 					focus={true}
+					value={searchText}
+					onChange={(_, data) => onSearch(data.value)}
 				/>
 				<Icon
 					name="close"

@@ -9,7 +9,7 @@ export function BasicLayout(props) {
 	return (
 		<>
 			{/* TODO: TopBar */}
-			<TopBar />
+			<TopBar isOpenSearch={isOpenSearch} />
 			<Container fluid>
 				<div className={classNames({ [styles.relative]: relative })}>
 					{isContainer ? <Container>{children}</Container> : children}

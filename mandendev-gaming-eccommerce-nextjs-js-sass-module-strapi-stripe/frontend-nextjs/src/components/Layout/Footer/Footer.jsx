@@ -10,7 +10,7 @@ export function Footer() {
 					<div>
 						<Link href="/">
 							<Image
-								src="images/logo.png"
+								src="/images/logo.png"
 								alt="Mandendev Gaming"
 							/>
 						</Link>
